@@ -5,7 +5,7 @@
   <groupId>com.oracle</groupId>
   <artifactId>app</artifactId>
   <version>1.0</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>app</name>
   <url>http://maven.apache.org</url>
