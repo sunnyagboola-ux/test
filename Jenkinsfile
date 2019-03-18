@@ -8,6 +8,7 @@ pipeline {
           echo 'echo command not found'
         }
 
+        echo 'command not found'
       }
     }
     stage('Msg') {
