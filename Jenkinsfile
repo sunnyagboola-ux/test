@@ -29,6 +29,7 @@ pipeline {
           steps {
             echo 'Checkout failed'
             error 'Error'
+            readFile 'extra_vars.json'
           }
         }
       }
