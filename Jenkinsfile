@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'master'
+    }
+
+  }
   stages {
     stage('error') {
       steps {
@@ -17,6 +22,7 @@ pipeline {
           steps {
             echo 'Checkout finished'
             catchError()
+            ws(dir: 'test')
           }
         }
         stage('IfError') {
@@ -27,8 +33,5 @@ pipeline {
         }
       }
     }
-  }
-  environment {
-    test = 'test'
   }
 }
