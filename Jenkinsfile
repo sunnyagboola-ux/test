@@ -1,9 +1,24 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'echo "$workspace"'
+        sh 'ecoo "$workspace"'
+      }
+    }
+    stage('Msg') {
+      parallel {
+        stage('Msg') {
+          steps {
+            echo 'Checkout finished'
+            catchError()
+          }
+        }
+        stage('IfError') {
+          steps {
+            echo 'Checkout failed'
+          }
+        }
       }
     }
   }
