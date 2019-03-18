@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'ecoo "$workspace"'
         catchError() {
-          echo 'command not found'
+          echo 'echo command not found'
         }
 
       }
