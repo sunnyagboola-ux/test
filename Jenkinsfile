@@ -22,9 +22,13 @@ pipeline {
         stage('IfError') {
           steps {
             echo 'Checkout failed'
+            error 'Error'
           }
         }
       }
     }
+  }
+  environment {
+    test = 'test'
   }
 }
