@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh 'ecoo "$workspace"'
+        sh 'echo $workspace'
         catchError() {
           echo 'echo command not found'
         }
