@@ -4,6 +4,10 @@ pipeline {
     stage('error') {
       steps {
         sh 'ecoo "$workspace"'
+        catchError() {
+          echo 'command not found'
+        }
+
       }
     }
     stage('Msg') {
