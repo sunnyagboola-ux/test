@@ -65,6 +65,7 @@ pipeline {
                 stage('Upload Archives to ObjectStorage') {
                     steps {
                         bat 'echo "Git checkout has been completed"'
+                        bat 'echo "Git checkout has been completed"'
                         bat 'C:\\curl-7.61.0-win64-mingw\\bin\\curl.exe -i -X PUT -H "X-Auth-Token: AUTH_tk48d17783bf273befd8817ec62be9992d" https://a472144.us.storage.oraclecloud.com/v1/Storage-a472144/%containerName%/EmersonDbcsApi-v1.zip -T .\\ApiNodeArchive\\EmersonApi.zip'
                         }
                                                         }
@@ -72,7 +73,7 @@ pipeline {
                 stage('Update Archives to AccS Instance') {
                     steps {
                         bat 'echo "Git checkout has been completed"'
-                        bat 'C:\\curl-7.61.0-win64-mingw\\bin\\curl.exe -X PUT -u gopi.krishna@sofbang.com:G@p!$22041995  -H "X-ID-TENANT-NAME:a472144" -H "Content-Type: multipart/form-data"   -F "manifest=@C:\\Jenkins\\workspace\\SDR\\SDR_V1.0\\NodeAPiPipeline\\manifest.json" -F "archiveURL=%containerName%/EmersonDbcsApi-v1.zip" -F "notes=Emerson Node Api Deployment Instance" https://apaas.us.oraclecloud.com/paas/service/apaas/api/v1.1/apps/a472144/%AccSInstanceName%'
+                        bat 'C:\\curl-7.61.0-win64-mingw\\bin\\curl.exe -X PUT -u gopi.krishna@sofbang.com:PASSWORD -H "X-ID-TENANT-NAME:a472144" -H "Content-Type: multipart/form-data"   -F "manifest=@C:\\Jenkins\\workspace\\SDR\\SDR_V1.0\\NodeAPiPipeline\\manifest.json" -F "archiveURL=%containerName%/EmersonDbcsApi-v1.zip" -F "notes=Emerson Node Api Deployment Instance" https://apaas.us.oraclecloud.com/paas/service/apaas/api/v1.1/apps/a472144/%AccSInstanceName%'
                         }
                                                         }  
                     }
