@@ -24,7 +24,7 @@ pipeline {
                          }
                 stage('Get Node modules') {
                     steps {   
-                        echo "Installation of node modules"
+                        echo "Installation of node modules1"
                         bat 'cd .\\FieldServiceAPINode && npm install'
                         echo "Node modules have been added Successfully"
                         }
