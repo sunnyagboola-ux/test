@@ -11,7 +11,7 @@ pipeline {
                     steps {
                          git(
                               url: 'git@github.com:emersonprocess/FIELD-SERVICE-API.git',
-                              credentialsId: '9796d75e-de18-4c12-b5c1-b83c21b0aed5',
+                              credentialsId: '9796d75e-de18-4c12-b5c1-b83cd5',
                               branch: "${gitBranch}"
                              )
                         }
